@@ -123,8 +123,11 @@ button {
     border: 1px solid black;
     border-radius: 6px;
     background-color: white;
+    color: black;
+    font-family: system-ui, sans-serif;
     cursor: pointer;
     transition: 0.2s;
+    appearance: none;
 }
 
 /* Efeito quando o mouse passa sobre o botão de envio */
@@ -169,5 +172,7 @@ button:hover {
 
     button {
         width: 100%;
+        color: black;
+
     }
 }
