@@ -13,29 +13,29 @@ formulario.addEventListener("submit", function(evento) {
 
     // Verificação se os campos estão vazios
     if (nome === "" ) {
-        //aviso.textContent = "Digite seu nome!";
-        alert("Digite seu nome!");
+        aviso.textContent = "Digite seu nome!";
+        //alert("Digite seu nome!");
         return;
     }
 
     if (email === "") {
-        //aviso.textContent = "Digite seu e-mail!";
-        alert("Digite seu e-mail!");
+        aviso.textContent = "Digite seu e-mail!";
+        //alert("Digite seu e-mail!");
         return;
     }
 
     // Validação do campo de e-mail
     const emailValido = email.includes("@") && email.includes(".");
     if (!emailValido) {
-        alert("Digite um e-mail válido!");
-        //aviso.textContent = "Digite um e-mail válido!";
+        //alert("Digite um e-mail válido!");
+        aviso.textContent = "Digite um e-mail válido!";
         return;
     }
 
     // Alerta caso o campo de mensagem esteja vazio
     if (mensagem === "") { 
-        alert("Digite sua mensagem!");
-        //aviso.textContent = "Digite sua mensagem!";
+        //alert("Digite sua mensagem!");
+        aviso.textContent = "Digite sua mensagem!";
         return;
     }
 
@@ -54,16 +54,16 @@ formulario.addEventListener("submit", function(evento) {
     // Verifica resposta do Formspree
     .then(function(resposta) {
         if (resposta.ok) {
-            alert("Mensagem enviada com sucesso!");
+            aviso.textContent = "Mensagem enviada com sucesso!";
             formulario.reset();
         } else {
-            alert("Falha no envio. Tente novamente!");
+            aviso.textContent = "Falha no envio. Tente novamente!";
         }
     })
 
     // Mensagem caso hja erro de conexão
     . catch(function() {
-        alert("Falha no envio. Verifique a conexão e tente novamente.");
+        aviso.textContent = "Falha no envio. Verifique a conexão e tente novamente.";
     });
     
 });
